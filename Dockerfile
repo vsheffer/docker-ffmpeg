@@ -700,12 +700,13 @@ RUN \
     libxext6 \
     libxfixes3 \
     libxml2 \
+    python3 \
+    python3-pip \
     ocl-icd-libopencl1 && \
+  pip3 install ffmpeg-python && \
   echo "**** clean up ****" && \
   rm -rf \
     /var/lib/apt/lists/* \
     /var/tmp/*
 
-COPY /root /
 
-ENTRYPOINT ["/ffmpegwrapper.sh"]
